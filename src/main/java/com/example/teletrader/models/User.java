@@ -1,5 +1,6 @@
 package com.example.teletrader.models;
 
+import com.example.teletrader.enums.Role;
 import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -38,4 +39,8 @@ public class User {
 
     @Column(name = "user_name")
     private String userName;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role")
+    private Role role;
 }

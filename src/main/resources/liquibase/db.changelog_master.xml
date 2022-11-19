@@ -7,4 +7,5 @@
     <!--changeSets-->
     <include file="db_changelog/create_table_users.sql" relativeToChangelogFile="true"/>
     <include file="db_changelog/create_table_orders.sql" relativeToChangelogFile="true"/>
+    <include file="db_changelog/create_table_stocks.sql" relativeToChangelogFile="true"/>
 </databaseChangeLog>

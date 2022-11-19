@@ -14,10 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderController {
     private final OrderService orderService;
 
-//    public OrderController(OrderService orderService) {
-//        this.orderService = orderService;
-//    }
-
     @PostMapping("/market")
     public void postOrderMarket(@RequestBody OrderRequest order) {
         orderService.saveMarketOrder(order);

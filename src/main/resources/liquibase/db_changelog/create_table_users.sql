@@ -5,5 +5,6 @@ CREATE TABLE users
     firstName           VARCHAR(256),
     lastName            VARCHAR(256),
     password            VARCHAR(256),
-    user_name           VARCHAR(256)
+    user_name           VARCHAR(256),
+    role                VARCHAR(100)
 );
