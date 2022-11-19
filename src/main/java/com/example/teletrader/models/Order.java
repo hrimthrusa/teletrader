@@ -1,5 +1,6 @@
 package com.example.teletrader.models;
 
+import com.example.teletrader.enums.OperationType;
 import com.example.teletrader.enums.OrderType;
 import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
@@ -32,7 +33,12 @@ public class Order {
     private Long amount;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "type")
-    @Type(type = "type")
-    private OrderType type;
+    @Column(name = "operation_type")
+    @Type(type = "operationType")
+    private OperationType operationType;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "order_type")
+    @Type(type = "order_type")
+    private OrderType orderType;
 }

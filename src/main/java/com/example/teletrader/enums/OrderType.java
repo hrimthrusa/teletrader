@@ -1,5 +1,5 @@
 package com.example.teletrader.enums;
 
 public enum OrderType {
-    BUY, SELL
+    MARKET, LIMIT, STOP, STOP_LIMIT, TRAILING_STOP
 }
