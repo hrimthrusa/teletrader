@@ -34,11 +34,9 @@ public class Order {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "operation_type")
-    @Type(type = "operationType")
     private OperationType operationType;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "order_type")
-    @Type(type = "order_type")
     private OrderType orderType;
 }
