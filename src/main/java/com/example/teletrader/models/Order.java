@@ -33,10 +33,10 @@ public class Order {
     private Long amount;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "operation_type")
+    @Column(name = "operationtype")
     private OperationType operationType;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "order_type")
+    @Column(name = "ordertype")
     private OrderType orderType;
 }
