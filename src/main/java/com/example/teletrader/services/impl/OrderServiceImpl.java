@@ -16,6 +16,7 @@ import lombok.RequiredArgsConstructor;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.annotations.Cache;
+import org.hibernate.cfg.Configuration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +28,11 @@ public class OrderServiceImpl implements OrderService {
     private final ProcessOrderRepository processOrderRepository;
     private final StockRepository stockRepository;
     private final UserRepository userRepository;
+
+//    Configuration cfg = new Configuration()
+//            .addResource("hibernate.cfg.xml")
+//            .addResource("hibernate.properties");
+//    SessionFactory sessions = cfg.buildSessionFactory();
     @Override
     public void saveOrder(ProcessedOrderRequest processedOrderRequest) {
         OrderType orderType = processedOrderRequest.getOrderType();
@@ -73,6 +79,8 @@ public class OrderServiceImpl implements OrderService {
 
         boolean orderIsExecuted = false;
         while (!orderIsExecuted) {
+//            Session session = (Session) sessions.openStatelessSession();
+
             Stock stock = stockRepository.findByTicker(processedOrderRequest.getTicker())
                     .orElseThrow(() -> new ObjectNotFoundException("There is no such ticker available."));
 
@@ -93,6 +101,8 @@ public class OrderServiceImpl implements OrderService {
                 processOrderRepository.save(processedOrder);
                 orderIsExecuted = true;
                 System.out.println(momentaryStockPrice + " operaciya vipolnena");
+
+//                session.close();
 
             }
             try {
