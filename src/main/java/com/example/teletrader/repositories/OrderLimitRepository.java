@@ -29,7 +29,7 @@ public class OrderLimitRepository {
     User user = userRepository.findById(processedOrderRequest.getUserId())
             .orElseThrow(() -> new ObjectNotFoundException("There is no such user available."));
 
-        Session session = sessionfactory.openSession();
+        Session session = entityManagerFactory.unwrap(Session.class);
         boolean orderIsExecuted = false;
         while (!orderIsExecuted) {
             Query query = session.createQuery("from Stock where ticker = :paramName");
