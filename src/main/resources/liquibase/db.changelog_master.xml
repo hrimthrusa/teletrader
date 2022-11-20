@@ -6,8 +6,11 @@
 
     <!--changeSets-->
     <include file="db_changelog/create_table_users.sql" relativeToChangelogFile="true"/>
-    <include file="db_changelog/create_table_orders.sql" relativeToChangelogFile="true"/>
     <include file="db_changelog/create_table_stocks.sql" relativeToChangelogFile="true"/>
     <include file="db_changelog/create_table_processed_orders.sql" relativeToChangelogFile="true"/>
+    <include file="db_changelog/filling_table_users.sql" relativeToChangelogFile="true"/>
     <include file="db_changelog/filling_stocks_table.sql" relativeToChangelogFile="true"/>
+    <include file="db_changelog/filling.processed_orders.sql" relativeToChangelogFile="true"/>
+
+
 </databaseChangeLog>

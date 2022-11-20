@@ -14,16 +14,14 @@ import java.util.Collections;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
-
     @Bean
     public Docket swaggerDocumentation() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.fedag"))
+                .apis(RequestHandlerSelectors.basePackage("com.example"))
                 .build()
                 .apiInfo(apiDetails());
     }
-
     private ApiInfo apiDetails() {
         return new ApiInfo(
                 "A simple client for orders placement",

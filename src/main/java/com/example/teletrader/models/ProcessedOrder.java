@@ -2,9 +2,9 @@ package com.example.teletrader.models;
 
 import com.example.teletrader.enums.OperationType;
 import com.example.teletrader.enums.OrderType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import lombok.*;
-
 import javax.persistence.*;
 
 @AllArgsConstructor
@@ -32,6 +32,7 @@ public class ProcessedOrder {
     @Enumerated(EnumType.STRING)
     @Column(name = "order_type")
     private OrderType orderType;
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

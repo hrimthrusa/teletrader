@@ -18,6 +18,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import com.example.teletrader.dto.request.UserRequest;
+
 import javax.validation.Valid;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -30,7 +31,6 @@ public class AuthController {
     private final PasswordEncoder encoder;
     private final JwtUtils jwtUtils;
 
-
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
@@ -38,9 +38,7 @@ public class AuthController {
                 .authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
-
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
-
         ResponseCookie jwtCookie = jwtUtils.generateJwtCookie(userDetails);
 
         return ResponseEntity.ok().header(HttpHeaders.AUTHORIZATION, jwtCookie.toString())

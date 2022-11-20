@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class StockScheduler {
     private final StockRepository stockRepository;
+
     @Scheduled(initialDelay = 1000L, fixedDelay = 5000L)
     public void changePrice() {
         stockRepository.changePrice();
