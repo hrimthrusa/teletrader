@@ -6,13 +6,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderRequest {
+public class ProcessedOrderRequest {
     private Double price;
+    private String ticker;
     private Long amount;
+    private OrderType orderType;
     private OperationType operationType;
+    private Long userId;
 }

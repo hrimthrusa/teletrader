@@ -6,6 +6,8 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 public interface StockRepository extends JpaRepository<Stock, Long> {
 
     @Modifying
@@ -13,4 +15,6 @@ public interface StockRepository extends JpaRepository<Stock, Long> {
     @Query(value = "UPDATE stocks SET price = random() * (100-50) + 50 WHERE id <> 0",
     nativeQuery = true)
     void changePrice();
+
+    Optional<Stock> findByTicker(String ticker);
 }

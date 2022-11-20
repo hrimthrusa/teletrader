@@ -1,7 +1,7 @@
 package com.example.teletrader.services;
 
-import com.example.teletrader.dto.request.OrderRequest;
+import com.example.teletrader.dto.request.ProcessedOrderRequest;
 
 public interface OrderService {
-    void saveMarketOrder(OrderRequest orderRequest);
+    void saveOrder(ProcessedOrderRequest processedOrderRequest);
 }

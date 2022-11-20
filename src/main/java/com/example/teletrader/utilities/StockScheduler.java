@@ -13,4 +13,6 @@ public class StockScheduler {
     public void changePrice() {
         stockRepository.changePrice();
     }
+
+
 }
