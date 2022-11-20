@@ -12,7 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-@Profile("!test")
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     private final UserRepository userRepository;
