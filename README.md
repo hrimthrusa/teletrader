@@ -50,7 +50,12 @@ or for a limit order:
 ```
 the `price` parameter expresses the desired price of the stock to execute the order.
 
-4. Table `processed_orders` is prefilled with test data and there is a possibility of getting the Order Book by sending a GET request to `http://localhost:8080/api/v1/order-book/sell` to get the Top 10 Sell orders and
-   `http://localhost:8080/api/v1/order-book/buy` to get the Top 10 Buy orders.
+4. Table `processed_orders` is prefilled with test data and there is a feature of getting the Order Book by sending a POST request to `http://localhost:8080/api/v1/order-book/sell` to get the Top 10 Sell orders and
+   `http://localhost:8080/api/v1/order-book/buy` to get the Top 10 Buy orders of a specified ticker.
+```json
+{
+"ticker" : "A"
+}
+```
 
 ###### Thank You for Your time.
