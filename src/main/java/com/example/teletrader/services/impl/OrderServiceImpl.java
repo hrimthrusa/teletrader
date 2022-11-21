@@ -53,6 +53,7 @@ public class OrderServiceImpl implements OrderService {
                 .build();
 
         processOrderRepository.save(processedOrder);
+        System.out.println("The market order was executed successfully. Price: " + stock.getPrice());
     }
 
     private void saveLimitOrder(ProcessedOrderRequest processedOrderRequest) {

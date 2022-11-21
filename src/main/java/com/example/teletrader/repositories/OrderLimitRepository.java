@@ -35,7 +35,6 @@ public class OrderLimitRepository {
 
             double momentaryStockPrice = stock.getPrice();
             double desiredOperationPrice = processedOrderRequest.getPrice();
-            System.out.println(momentaryStockPrice);
 
             if (processedOrderRequest.getOperationType() == OperationType.BUY) {
                 if (momentaryStockPrice > 0 && momentaryStockPrice <= desiredOperationPrice) {
@@ -50,7 +49,7 @@ public class OrderLimitRepository {
 
                     processOrderRepository.save(processedOrder);
                     orderIsExecuted = true;
-                    System.out.println(momentaryStockPrice + " operaciya vipolnena");
+                    System.out.println("The limit order executed successfully. Price: " + momentaryStockPrice);
                 }
             } else if (processedOrderRequest.getOperationType() == OperationType.SELL) {
                 if (momentaryStockPrice >= desiredOperationPrice) {
@@ -65,7 +64,7 @@ public class OrderLimitRepository {
 
                     processOrderRepository.save(processedOrder);
                     orderIsExecuted = true;
-                    System.out.println(momentaryStockPrice + " operaciya vipolnena");
+                    System.out.println("The limit order executed successfully. Price: " + momentaryStockPrice);
                 }
                 try {
                     Thread.sleep(5020);
